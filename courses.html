@@ -24,5 +24,16 @@
       <!-- Course items will be dynamically added here -->
     </ul>
   </main>
+<script>
+    // Check if the user is logged in and display a message
+    const isLoggedIn = '<%= typeof isLoggedIn !== "undefined" ? isLoggedIn : false %>';
+    const username = '<%= typeof username !== "undefined" ? username : "" %>';
+
+    if (isLoggedIn) {
+      const message = document.createElement('p');
+      message.textContent = `Welcome, ${username}! You are now logged in.`;
+      document.body.appendChild(message);
+    }
+  </script>
 </body>
 </html>
